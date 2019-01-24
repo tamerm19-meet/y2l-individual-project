@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-fuck you
-</body>
+    <head>
+        <title>tamers100%homepage</title>
+        <link rel="shortcut icon" type="image/jpg" href="../static/spa.jpeg">
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    </head>
+    <body id="home_body" >
+    
+    
+        <center>
+    	<div id="logo_div">
+    	<img id="logo"  src="../static/logo5.png">
+    	</div>
+        <br>
+        <div class= "container-fluid">
+    	<h2 id="h" >tamers website 100%</h2>
+        <br>
+    	<div id="home">
+    	<form method="post">
+
+	        <input type="text" name="user_name" class="form-control" placeholder="name" style="font-family:Comfortaa" >
+	        <br>
+	        
+
+	        <input  min = "10" max = "110" type="number" name="user_age" class="form-control" placeholder="age" style="font-family:Comfortaa">
+
+	        <br>
+        
+	        <select  class="dropdown" name="user_location" placeholder="age" style="font-family:Comfortaa">
+			  <option value="Jerusalem">Jerusalem</option>
+			  <option value="Nazareth">Nazareth</option>
+			  <option value="Tel Aviv">Tel Aviv</option>
+			  <option value="Haifa">Haifa</option>
+			  <option value="North">North</option>
+			  <option value="Bethlehem">Bethlehem</option>
+	          <option value="Eilat">Eilat</option>
+	          <option value="Ramallah">Ramallah</option>
+	          <option value="Ashkelon">Ashkelon</option>
+
+			</select>
+			<br>
+			<br>
+            
+	        <!-- <input type="text" name="user_location" class="form-control" placeholder="location" style="font-family:Comfortaa">
+	        <br> -->
+	        
+	        <input type="submit" class="btn btn-light" value="submit" style="font-family:Comfortaa">
+            <br>
+            <br>
+            
+	    </form>
+        </div>
+	   </center>
+    
+    
+    <!-- <img src="{{ url_for('static',filename='billblock.png') }}" width=200px height=150px> -->
+	    	
+    </body>
 </html>
