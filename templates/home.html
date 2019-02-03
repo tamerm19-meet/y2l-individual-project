@@ -54,6 +54,88 @@
 	    </form>
         </div>
 	   </center>
+
+
+
+
+<!-- @#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@# -->
+
+
+	 {% for i in range(matches | length) %}
+	 <div class="post">
+	   <ul>
+		 <li>{{matches[i].description}}</li>
+		 <script>
+		 var random_color = colors[Math.floor(Math.random() * colors.length)];
+		 document.getElementsByClassName('post')[{{i}}].style.backgroundColor = random_color;
+	   </script>
+		 <br>
+		 <br>
+	   </ul>
+	 </div>
+	 {% endfor %}
+
+
+<!-- @#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@# -->
+
+   <script>
+	 function myFunction() {
+	   document.getElementById("myDropdown").classList.toggle("show");
+	   return false;
+	 }
+	 window.onclick = function(event) {
+	   if (!event.target.matches('.dropbtn')) {
+		 var dropdowns = document.getElementsByClassName("dropdown-content");
+		 var i;
+		 for (i = 0; i < dropdowns.length; i++) {
+		   var openDropdown = dropdowns[i];
+		   if (openDropdown.classList.contains('show')) {
+			 openDropdown.classList.remove('show');
+		   }
+		 }
+	   }
+	 }
+   
+   var log = '{{log}}';
+   
+   if (log=='false') {
+		   var str1 = "Sign Up";
+		   var result1 = str1.link("{{url_for('SignUp')}}");
+		   document.getElementById("signup").classList.add("nav-link");
+		   document.getElementById("signup").innerHTML = result1;
+	   }
+   var str;
+   var result;
+   document.getElementById("demo").classList.add("nav-link");
+   if (log=='true') {
+	   str = "Log Out";
+	   result = str.link("{{url_for('logout')}}");
+	   }
+   else{
+		   str = "Log in";
+		   result = str.link("{{url_for('Login')}}");
+	   }
+   
+   console.log(result)
+   document.getElementById("demo").innerHTML = result;
+   
+   </script>
+	
+   </body>
+   
+   </html>
+   
+
+
+
+
+
+
+
+
+
+
+
     
     
     <!-- <img src="{{ url_for('static',filename='billblock.png') }}" width=200px height=150px> -->
