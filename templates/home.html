@@ -1,144 +1,33 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title>tamers100%homepage</title>
-        <link rel="shortcut icon" type="image/jpg" href="../static/spa.jpeg">
-        <link rel="stylesheet" type="text/css" href="../static/style.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+        <ul>
+            <li><a class="active" href="{{url_for('homepage')}}">Home</a></li>
+            <li><a href="{{url_for('post')}}">Post</a></li>
+            <li><form method="POST" action="/logout">
+            <a href="{{url_for('logout')}}">Log Out</a></form></li>
+            
+        </ul>
     </head>
-    <body id="home_body" >
-    
-    
-        <center>
-    	<div id="logo_div">
-    	<img id="logo"  src="../static/logo5.png">
-    	</div>
-        <br>
-        <div class= "container-fluid">
-    	<h2 id="h" >tamers website 100%</h2>
-        <br>
-    	<div id="home">
-    	<form method="post">
-
-	        <input type="text" name="user_name" class="form-control" placeholder="name" style="font-family:Comfortaa" >
-	        <br>
-	        
-
-	        <input  min = "10" max = "110" type="number" name="user_age" class="form-control" placeholder="age" style="font-family:Comfortaa">
-
-	        <br>
+    <body>
+            <center><h1 class="page_title">Welcome {{a}}</h1></center>
         
-	        <select  class="dropdown" name="user_location" placeholder="age" style="font-family:Comfortaa">
-			  <option value="Jerusalem">Jerusalem</option>
-			  <option value="Nazareth">Nazareth</option>
-			  <option value="Tel Aviv">Tel Aviv</option>
-			  <option value="Haifa">Haifa</option>
-			  <option value="North">North</option>
-			  <option value="Bethlehem">Bethlehem</option>
-	          <option value="Eilat">Eilat</option>
-	          <option value="Ramallah">Ramallah</option>
-	          <option value="Ashkelon">Ashkelon</option>
-
-			</select>
-			<br>
-			<br>
+            <form id="home" method="GET" action="/">
+                    {% for i in articles %}
+                    <div style="padding-left: 25px; " class="container gameCard">
+                            <br>
+                        {{i.Title}}
+                        <br>
+                        <br>
+                        {{i.Content}}
+                        <br>
+                    -{{i.Publisher}}
+                    </div>
+                    {% endfor %}
+                </table>
             
-	        <!-- <input type="text" name="user_location" class="form-control" placeholder="location" style="font-family:Comfortaa">
-	        <br> -->
-	        
-	        <input type="submit" class="btn btn-light" value="submit" style="font-family:Comfortaa">
-            <br>
-            <br>
-            
-	    </form>
-        </div>
-	   </center>
-
-
-
-
-<!-- @#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@# -->
-
-
-	 {% for i in range(matches | length) %}
-	 <div class="post">
-	   <ul>
-		 <li>{{matches[i].description}}</li>
-		 <script>
-		 var random_color = colors[Math.floor(Math.random() * colors.length)];
-		 document.getElementsByClassName('post')[{{i}}].style.backgroundColor = random_color;
-	   </script>
-		 <br>
-		 <br>
-	   </ul>
-	 </div>
-	 {% endfor %}
-
-
-<!-- @#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@##@#@#@#@#@#@#@#@#@# -->
-
-   <script>
-	 function myFunction() {
-	   document.getElementById("myDropdown").classList.toggle("show");
-	   return false;
-	 }
-	 window.onclick = function(event) {
-	   if (!event.target.matches('.dropbtn')) {
-		 var dropdowns = document.getElementsByClassName("dropdown-content");
-		 var i;
-		 for (i = 0; i < dropdowns.length; i++) {
-		   var openDropdown = dropdowns[i];
-		   if (openDropdown.classList.contains('show')) {
-			 openDropdown.classList.remove('show');
-		   }
-		 }
-	   }
-	 }
-   
-   var log = '{{log}}';
-   
-   if (log=='false') {
-		   var str1 = "Sign Up";
-		   var result1 = str1.link("{{url_for('SignUp')}}");
-		   document.getElementById("signup").classList.add("nav-link");
-		   document.getElementById("signup").innerHTML = result1;
-	   }
-   var str;
-   var result;
-   document.getElementById("demo").classList.add("nav-link");
-   if (log=='true') {
-	   str = "Log Out";
-	   result = str.link("{{url_for('logout')}}");
-	   }
-   else{
-		   str = "Log in";
-		   result = str.link("{{url_for('Login')}}");
-	   }
-   
-   console.log(result)
-   document.getElementById("demo").innerHTML = result;
-   
-   </script>
-	
-   </body>
-   
-   </html>
-   
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <!-- <img src="{{ url_for('static',filename='billblock.png') }}" width=200px height=150px> -->
-	    	
+            </form>
+        
+         
     </body>
 </html>

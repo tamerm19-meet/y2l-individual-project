@@ -1,0 +1,107 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="../static/style_new.css">
+            <link rel="stylesheet" type="text/css" href="../static/signup.css">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}">
+        </head>
+        <script src="{{ url_for('static', filename='bootstrap/jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.js') }}"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../static/style_new.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        
+        <style>
+        form {
+            /* border: 1.5px solid gold; */
+            background-image: url('https://cdn.discordapp.com/attachments/190208815709290496/565278510671724564/scroll-152864__340.png') !important;
+            margin: auto;
+            width: 22.7vw;
+            /* margin-top: 40vh; */
+            background-color: transparent;
+            /* border-radius: 25px; */
+        }
+    
+        input{
+            font-family: FontAwesome;
+            border-radius: 25px;
+            outline: none;
+            text-indent: 15px;
+            margin-left: 3px;
+            border: 1.5px solid black;
+            background-color: transparent;
+            color: black;
+            transition: 1s ease-in-out;
+            
+        }
+    
+        input:hover{
+            background-color: black;
+            color: gold;
+            transition: 1s ease-in-out;
+        }
+    
+        input::placeholder{
+            color: black;
+             transition: 1s ease-in-out;
+        }
+        input:hover::placeholder{
+            color:gold;
+            transition: 1s ease-in-out;
+        }
+        button{
+            outline:none;
+        }
+        .btns {
+            background-color: transparent;
+            color: white;
+            border: 1px solid black;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .btns:hover {
+            background-color: black;
+            color: gold;
+            transition: 1s ease-in-out;
+        }
+    
+        .icn {
+            width: 16px;
+            height: 16px;
+            color: black;
+        }
+    
+        h2{
+            color: black;
+            font-weight: bold;
+        }
+        body{
+            background-image: url("../static/maybe.jpg") !important;
+            /* background-color: #cccccc; */
+        }
+        
+    </style>
+        
+        
+        
+        
+        <body>
+
+
+            
+    <div style="text-align: center; margin-top: 40vh;" class= "containter">
+            <form id="log" method="POST" action="/login">
+     
+             <div style="padding: 40px;">
+                     <div><h2>Login:</h2></div>
+                <div style="margin-top: 25px;"><i class="fas fa-scroll"></i><input autocomplete="off"  type="text" name="email" placeholder="Enter Your Email" class="info" required></div>
+                <div style="margin-top: 15px;"><i class="fas fa-scroll"></i><input type="password" name="password" placeholder="Enter Your Password" class="info" required></div>
+                <div style="margin-top: 30px;"><button style="outline:none !important;" value="Log In" class="btns" type="submit" >Login</button><br><br></div>
+              <div><a href="{{url_for('actualsignup')}}" style="color: gold;font-weight: bold;">no account? sign up</a></div>
+              
+             </div>
+            </form>
+         </div>
+
+        </body>
+</html>

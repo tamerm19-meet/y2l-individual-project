@@ -1,0 +1,87 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="../static/style_new.css">
+            <link rel="stylesheet" type="text/css" href="../static/signup.css">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}">
+
+
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+        <ul>
+            <li><a href="{{url_for('homepage')}}">Home</a></li>
+            <li><a class="active" href="{{url_for('post')}}">Post</a></li>
+            <li><form method="POST" action="/logout">
+            <a href="{{url_for('logout')}}">Log Out</a></form></li>
+        </ul>
+    </head>
+    <script src="{{ url_for('static', filename='bootstrap/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.js') }}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/style_new.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+<!--  -->
+<style>
+        input{
+            font-family: FontAwesome;
+            border-radius: 25px;
+            outline: none;
+            text-indent: 15px;
+            margin-left: 15px;
+            border: 1.5px solid gold;
+            background-color: transparent;
+            color: white;
+            transition: 1s ease-in-out;
+            
+        }
+    
+        input:hover{
+            background-color: gold;
+            color: darkslategray;
+            transition: 1s ease-in-out;
+        }
+        .class1{
+            font-family: FontAwesome;
+            border-radius: 25px;
+            outline: none;
+            
+            
+            border: 1.5px solid gold;
+            background-color: transparent;
+            color: white;
+            transition: 1s ease-in-out;
+            
+            font-size: 36px;
+            max-width: 30%;
+      
+            width:100%;
+        }
+        .class1:hover{
+            background-color: gold;
+            color: darkslategray;
+            transition: 1s ease-in-out;
+        }
+        
+</style>
+<!--  -->
+    <body>
+        
+        <center>
+            <form id="add" method="POST" action="/post">
+                
+
+                    
+
+                    <center><h1 class="page_title">Post an Article</h1></center>
+
+                    <div style="margin-right:200px;margin-bottom: 5px;"><input autocomplete="off"   type="text" name="atitle" placeholder="Article Title" class="input" required></div>
+
+                    <div> <textarea name="content" placeholder="Write your article here" class="class1" required></textarea></div>
+                    <div style="max-width: 150px;"> <button type="submit" value="post" class="buttons">Post</button></div>
+                    
+                
+            </form>
+        </center>
+    </body>
+</html>
